@@ -25,9 +25,9 @@ $this->mysqli = $mysqli;
 
 
         /*INSERT*/            
-        public function insertIntoDb($selectors,$table,$values,$field,$fieldval){
+        public function insertIntoDb($selectors,$table,$values){
         $mysqli = $this->mysqli;
-        $sql = "INSERT INTO $table ($selectors) VALUES ($values) WHERE $field = $fieldval";
+        $sql = "INSERT INTO $table ($selectors) VALUES ($values)";
         $result = $mysqli->query($sql);
         if (mysqli_num_rows($result) > 0) {
         return $result;
@@ -35,7 +35,7 @@ $this->mysqli = $mysqli;
         else {
         return "0 results";
         }
-        }
+        }}
 
 
         /*UPDATE*/
