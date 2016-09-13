@@ -53,7 +53,7 @@ $this->mysqli = $mysqli;
 
 
         /*DELETE*/
-        public function deleteFromDB($table,$updatevals,$field,$fieldval){
+        public function deleteFromDB($table,$field,$fieldval){
         $mysqli = $this->mysqli;
         $sql = "DELETE FROM $table WHERE $field = $fieldval";
         $result = $mysqli->query($sql);
