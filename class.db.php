@@ -85,5 +85,17 @@ $this->mysqli = $mysqli;
         return "0 results";
         }
         }   
+
+
+
+        /*SELECT SINGLE ITEM*/
+        public function selectSingleFromDb($selectors,$table,$field,$fieldval){
+        $mysqli = $this->mysqli;
+        $result  = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT $selectors FROM $table WHERE $field = '$fieldval'"));
+        return  $result ;
+        //usage    
+        //$userID = $result['userID'];
+}  
+
 }//end class
 ?>
