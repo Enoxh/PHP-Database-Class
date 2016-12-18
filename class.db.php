@@ -1,15 +1,17 @@
 <?php
-class DBClass{
-//https://github.com/Enoxh/PHP-Database-Class
-//by @ENOXH
-
+class DBClass {
+    
+private $mysqli;
+    
 function __construct(){
-//your db connection must establish $mysqli as connection variable
-include_once('db_conn.php');
-$this->mysqli = $mysqli;
-}
-
-        /*SELECT*/
+require_once('db_conn.php');    
+$this->mysqli = $mysqli;    
+   
+} 
+  
+  //DB CLASS  
+    
+    /*SELECT*/
         public function selectFromDb($selectors,$table){
         $mysqli = $this->mysqli;
         $sql = "SELECT $selectors FROM $table";
@@ -21,9 +23,6 @@ $this->mysqli = $mysqli;
         return "0 results";
         }
         }
-
-
-
         /*INSERT*/            
         public function insertIntoDb($selectors,$table,$values){
         $mysqli = $this->mysqli;
@@ -35,9 +34,7 @@ $this->mysqli = $mysqli;
         else {
         return "0 results";
         }
-        }}
-
-
+        }
         /*UPDATE*/
         public function updateDbWhere($selectors,$table,$updatevals,$field,$fieldval){
         $mysqli = $this->mysqli;
@@ -49,9 +46,6 @@ $this->mysqli = $mysqli;
         return "0 results";
         }
         }
-
-
-
         /*DELETE*/
         public function deleteFromDB($table,$field,$fieldval){
         $mysqli = $this->mysqli;
@@ -63,9 +57,6 @@ $this->mysqli = $mysqli;
         return "0 results";
         }
         }    
-
-
-
         /*
         Usage: $result = $crud->selectFromDbJoinOn('test','profiles','test.id=profiles.id','*');
         */ 
@@ -85,9 +76,6 @@ $this->mysqli = $mysqli;
         return "0 results";
         }
         }   
-
-
-
         /*SELECT SINGLE ITEM*/
         public function selectSingleFromDb($selectors,$table,$field,$fieldval){
         $mysqli = $this->mysqli;
@@ -95,7 +83,8 @@ $this->mysqli = $mysqli;
         return  $result ;
         //usage    
         //$userID = $result['userID'];
-}  
+        }     
+    
+        }
 
-}//end class
 ?>
