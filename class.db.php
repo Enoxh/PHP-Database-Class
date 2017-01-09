@@ -28,13 +28,8 @@ $this->mysqli = $mysqli;
         $mysqli = $this->mysqli;
         $sql = "INSERT INTO $table ($selectors) VALUES ($values)";
         $result = $mysqli->query($sql);
-        if (mysqli_num_rows($result) > 0) {
         return $result;
-        }
-        else {
-        return "0 results";
-        }
-        }
+           }
         /*UPDATE*/
         public function updateDbWhere($selectors,$table,$updatevals,$field,$fieldval){
         $mysqli = $this->mysqli;
