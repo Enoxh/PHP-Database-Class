@@ -16,12 +16,7 @@ $this->mysqli = $mysqli;
         $mysqli = $this->mysqli;
         $sql = "SELECT $selectors FROM $table";
         $result = $mysqli->query($sql);
-        if (mysqli_num_rows($result) > 0) {
         return $result;
-        }
-        else {
-        return "0 results";
-        }
         }
         /*INSERT*/            
         public function insertIntoDb($selectors,$table,$values){
@@ -35,22 +30,14 @@ $this->mysqli = $mysqli;
         $mysqli = $this->mysqli;
         $sql = "UPDATE $table SET $updatevals WHERE $field = $fieldval";
         $result = $mysqli->query($sql);
-        if (mysqli_num_rows($result) > 0) {
         return $result;
-        }else {
-        return "0 results";
-        }
         }
         /*DELETE*/
         public function deleteFromDB($table,$field,$fieldval){
         $mysqli = $this->mysqli;
         $sql = "DELETE FROM $table WHERE $field = $fieldval";
         $result = $mysqli->query($sql);
-        if (mysqli_num_rows($result) > 0) {
         return $result;
-        }else {
-        return "0 results";
-        }
         }    
         /*
         Usage: $result = $crud->selectFromDbJoinOn('test','profiles','test.id=profiles.id','*');
@@ -64,11 +51,7 @@ $this->mysqli = $mysqli;
         ON $equals 
         ";
         $result = $mysqli->query($sql);
-        if (mysqli_num_rows($result) > 0) {
         return $result;
-        }
-        else {
-        return "0 results";
         }
         }   
         /*SELECT SINGLE ITEM*/
