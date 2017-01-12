@@ -62,7 +62,6 @@ $this->mysqli = $mysqli;
         //usage    
         //$userID = $result['userID'];
         }     
-    
         }
 
 ?>
