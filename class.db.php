@@ -4,10 +4,10 @@ class DBClass {
 private $mysqli;
     
 function __construct(){
+
 require_once('db_conn.php');    
 $this->mysqli = $mysqli;    
-   
-} 
+}
   
   //DB CLASS  
     
@@ -24,7 +24,7 @@ $this->mysqli = $mysqli;
         $sql = "INSERT INTO $table ($selectors) VALUES ($values)";
         $result = $mysqli->query($sql);
         return $result;
-           }
+        }
         /*UPDATE*/
         public function updateDbWhere($selectors,$table,$updatevals,$field,$fieldval){
         $mysqli = $this->mysqli;
@@ -53,7 +53,7 @@ $this->mysqli = $mysqli;
         $result = $mysqli->query($sql);
         return $result;
         }
-        }   
+     
         /*SELECT SINGLE ITEM*/
         public function selectSingleFromDb($selectors,$table,$field,$fieldval){
         $mysqli = $this->mysqli;
@@ -62,6 +62,5 @@ $this->mysqli = $mysqli;
         //usage    
         //$userID = $result['userID'];
         }     
-        }
-
+       } 
 ?>
