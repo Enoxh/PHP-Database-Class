@@ -8,8 +8,8 @@ A simple and generic database class for PHP and MYSQL
 
 <p>Include or require class.db.php on any page. </p>
 <p>Instantiate a new instance of the class</p>
-<p>$quiz = new Quiz();</p>
+<p>$db = new DB();</p>
 
 <p>Now you can call any of the public functions.<p>
 <p><b>Example:</b></p>
-<p>$result =$quiz->selectFromDb('*','myTableName');</p>
+<p>$result =$db->selectFromDb('*','myTableName');</p>
