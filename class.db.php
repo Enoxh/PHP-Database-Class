@@ -62,6 +62,18 @@ class DBClass {
             //usage    
             //$userID = $result['userID'];
             }     
+            
+            /*Get Column Names*/
+            public function showColumns($table){
+            $mysqli = $this->mysqli;
+            $arr = array();    
+            $sql = "SHOW COLUMNS FROM $table ";
+            $res = $mysqli->query($sql);
+            while($row = $res->fetch_assoc()){
+                $columns[] = $row['Field'];
+            }
+            return $columns;
+            }
 
     } 
 ?>
